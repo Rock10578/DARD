@@ -4,7 +4,7 @@ const UserDetailsScehma=new mongoose.Schema(
     {
         fname: String,
         lname: String,
-        mobile: {type: String, unique: true},
+        mobile: {type: Number, unique: true},
         password: String,
     },
     {
