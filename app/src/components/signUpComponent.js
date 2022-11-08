@@ -19,6 +19,8 @@ export default class SignUp extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.onCaptchVerify = this.onCaptchVerify.bind(this);
     this.onSignInSubmit = this.onSignInSubmit.bind(this);
+    this.verifyCode = this.verifyCode.bind(this);
+    this.changeMobile = this.changeMobile.bind(this);
   }
 
   handleSubmit(e){
