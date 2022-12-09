@@ -6,13 +6,14 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Login from './components/loginComponent';
 import SignUp from './components/signUpComponent';
 import UserDetails from './components/userDetails';
+import Courses from './components/courseAvailable';
 
 function App() {
   return (
     <Router>
       <div className="App">
         {/* NAVBAR */}
-        <nav className="navbar navbar-expand-lg navbar-light fixed-top shadow p-3 mb-5 bg-body rounded">
+        <nav className="navbar navbar-expand-lg navbar-light shadow p-3 bg-body rounded">
           <div className="container-fluid">
             <Link className="navbar-brand" to={'/sign-in'}>DARD</Link>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,20 +36,21 @@ function App() {
           </div>
         </nav>
 
-        {/* CONATAINER */}
-        <div className="auth-wrapper">
-          <div className="auth-inner">
-            <Routes>
-              <Route exact path="/" element={<Login />} />
-              <Route path="/sign-in" element={<Login />} />
-              <Route path="/sign-up" element={<SignUp />} />
-              <Route path="/userDetails" element={<UserDetails />}/>
-            </Routes>
-          </div>
-        </div>
+        {/* COMPONENTS */}
+        <Routes>
+          <Route exact path="/" element={
+          <div>
+            <br/>
+            <h1>WELCOME TO "DETAILED ANALYSIS OF REFUGEES AND DEVELOPMENT" PLATFORM</h1>
+            <Courses/>
+          </div>} />
+          <Route path="/sign-in" element={<Login />} />
+          <Route path="/sign-up" element={<SignUp />} />
+          <Route path="/userDetails" element={<UserDetails />}/>
+          <Route path="/courseAvailable" element={<Courses/>}/>
+        </Routes>
       </div>
     </Router>
-    
   );
 }
 

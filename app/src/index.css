@@ -4,30 +4,19 @@
   box-sizing: border-box;
 }
 body {
-  background: #1c8ef9 !important;
+  background: #ffffff !important;
   min-height: 100vh;
   display: flex;
   font-weight: 400;
   font-family: "Fira Sans", sans-serif;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-label,
-span {
+h1, h2, h3, h4, h5, h6, label, span {
   font-weight: 500;
   font-family: "Fira Sans", sans-serif;
 }
 
-body,
-html,
-.App,
-#root,
-.auth-wrapper {
+body, html, .App, #root, .auth-wrapper {
   width: 100%;
   height: 100%;
 }
@@ -70,8 +59,7 @@ html,
   font-weight: 400;
 }
 
-.forgot-password,
-.forgot-password a {
+.forgot-password, .forgot-password a {
   text-align: right;
   font-size: 13px;
   padding-top: 10px;
@@ -81,4 +69,42 @@ html,
 
 .forgot-password a {
   color: #167bff;
+}
+
+#signUpImages{
+  height: 300px;
+  width: 150px;
+}
+
+#productImage{
+  width: 100%;
+  height: 30vh;
+  border: rgba(34, 35, 58, 0.2);
+}
+
+@media screen and (max-width: 560px){
+  #BOX{
+    width: 300px;
+  }
+}
+
+@media screen and (min-width: 768px){
+  #signUpImages{
+    height: 500px;
+    width: 300px;
+  }
+}
+
+@media screen and (min-width: 992px){
+  #signUpImages{
+    height: 620px;
+    width: 380px;
+  }
+}
+
+@media screen and (min-width: 1200px){
+  #signUpImages{
+    height: 700px;
+    width: 500px;
+  }
 }

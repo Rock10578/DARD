@@ -28,8 +28,10 @@ export default class UserDetails extends Component {
     render(){
         return (
             <div>
+                <hr/>
                 Name<h1>{this.state.userData.fname} {this.state.userData.lname}</h1>
                 Phone No.<h1>{this.state.userData.mobile}</h1>
+                <hr/>
             </div>
         );
     }

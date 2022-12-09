@@ -8,7 +8,7 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const JWT_SECRET= "hsahfjhaslfnanbjsq2384083138w4098xhasfh4wuhsnsf"
 
-const mongoUrl="mongodb+srv://Shreyansh:Shreyansh1234@cluster0.lfpqlaw.mongodb.net/?retryWrites=true&w=majority";
+const mongoUrl="mongodb+srv://Shreyansh:Shreyansh1234@cluster0.lfpqlaw.mongodb.net/Gr_Age?retryWrites=true&w=majority";
 
 mongoose.connect(mongoUrl,{
     useNewUrlParser: true,
@@ -17,27 +17,78 @@ mongoose.connect(mongoUrl,{
 }).catch((e)=>console.log(e));
 
 require("./userDetails");
-const User=mongoose.model("UserInfo");
-
+const User1=mongoose.model("Age1");
+const User2=mongoose.model("Age2");
+const User3=mongoose.model("Age3");
+const User4=mongoose.model("Age4");
 
 
 app.post("/register", async (req,res) => {
-    const {fname, lname, mobile, password } = req.body;
+    const {ageRange, fname, lname, mobile, password } = req.body;
     
     const encryptedPassword = await bcrypt.hash(password, 10);
     
     try{
-        const oldUser = await User.findOne({mobile});
-        if (oldUser) {
-            // alert('User Exists');
-            return res.send({ error: "User Exists"});
+        if (ageRange==1){
+            const oldUser = await User1.findOne({mobile});
+
+            if (oldUser) {
+                // alert('User Exists');
+                return res.send({ error: "User Exists"});
+            }
+            await User1.create ({
+                ageRange,
+                fname,
+                lname,
+                mobile,
+                password: encryptedPassword,
+            });
         }
-        await User.create ({
-            fname,
-            lname,
-            mobile,
-            password: encryptedPassword,
-        });
+        else if (ageRange==2){
+            const oldUser = await User2.findOne({mobile});
+
+            if (oldUser) {
+                // alert('User Exists');
+                return res.send({ error: "User Exists"});
+            }
+            await User2.create ({
+                ageRange,
+                fname,
+                lname,
+                mobile,
+                password: encryptedPassword,
+            });
+        }
+        else if(ageRange==3){
+            const oldUser = await User3.findOne({mobile});
+
+            if (oldUser) {
+                // alert('User Exists');
+                return res.send({ error: "User Exists"});
+            }
+            await User3.create ({
+                ageRange,
+                fname,
+                lname,
+                mobile,
+                password: encryptedPassword,
+            });
+        }
+        else if (ageRange==4){
+            const oldUser = await User4.findOne({mobile});
+
+            if (oldUser) {
+                // alert('User Exists');
+                return res.send({ error: "User Exists"});
+            }
+            await User4.create ({
+                ageRange,
+                fname,
+                lname,
+                mobile,
+                password: encryptedPassword,
+            });
+        }
         res.send({ status: "ok" });
     } catch (error) {
         res.send({ status: "error" });
@@ -76,6 +127,20 @@ app.post("/userData", async(req,res)=>{
         });
     } catch (error) {}
 });
+
+// app.post("/(courseAvailable)", async(req,res)=>{
+//     const {token} = req.body;
+//     try{
+//         const user=jwt.verify(token, JWT_SECRET);
+//         const usermobile = user.mobile;
+//         User.findOne({ mobile: usermobile })
+//         .then((data) => {
+//             res.send({ status: "ok", data: data });
+//         }).catch((error) => {
+//             res.send({ status: "error", data: error });
+//         });
+//     } catch (error) {}
+// });
 
 
 

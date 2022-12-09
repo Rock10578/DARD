@@ -10,7 +10,7 @@ open 2nd terminal and move to app directory
 start by :- npm start
 it will start react project
 
-Technology used MERN = MongoDB-(For Database), Express-(For Fast, unopinionated, minimalist web work), React-(For Complete functional Website), Nodejs - (For backened)
+Technology used MERN = MongoDB-(For Database), Express-(For Fast, unopinionated, minimalist web work), React-(For Fronted or Face of Website), Nodejs - (For backened)
 Bootstrap - (For Complete Responsive Website)
 
 Team Members :- Shreyansh Patwa, Sawan, Vishal kumar Gautam
