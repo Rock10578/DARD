@@ -3,7 +3,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
-import Login from './components/loginComponent';
+import SignIn from './components/loginComponent';
 import SignUp from './components/signUpComponent';
 import UserDetails from './components/userDetails';
 import Courses from './components/courseAvailable';
@@ -22,7 +22,7 @@ function App() {
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li className="nav-item">
-                  <Link className="nav-link active" aria-current="page" to={'/sign-in'}>Login</Link>
+                  <Link className="nav-link active" aria-current="page" to={'/sign-in'}>Sign in</Link>
                 </li>
                 <li className="nav-item">
                   <Link className="nav-link active" aria-current="page" to={'/sign-up'}>Sign up</Link>
@@ -44,7 +44,7 @@ function App() {
             <h1>WELCOME TO "DETAILED ANALYSIS OF REFUGEES AND DEVELOPMENT" PLATFORM</h1>
             <Courses/>
           </div>} />
-          <Route path="/sign-in" element={<Login />} />
+          <Route path="/sign-in" element={<SignIn />} />
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/userDetails" element={<UserDetails />}/>
           <Route path="/courseAvailable" element={<Courses/>}/>

@@ -2,11 +2,11 @@ const mongoose=require("mongoose");
 
 const UserDetailsScehma1=new mongoose.Schema(
     {
-        ageRange: Number,
-        fname: String,
-        lname: String,
+        age: Number,
         mobile: {type: Number, unique: true},
         password: String,
+        gender: String,
+        hobby: String,
     },
     {
         collection: "Age1",

@@ -24,37 +24,34 @@ const User4=mongoose.model("Age4");
 
 
 app.post("/register", async (req,res) => {
-    const {ageRange, fname, lname, mobile, password } = req.body;
+    const {ageRange, age, mobile, password  } = req.body;
     
     const encryptedPassword = await bcrypt.hash(password, 10);
     
     try{
         if (ageRange==1){
+            const {gender, hobby } = req.body;
             const oldUser = await User1.findOne({mobile});
 
             if (oldUser) {
-                // alert('User Exists');
                 return res.send({ error: "User Exists"});
             }
             await User1.create ({
-                ageRange,
-                fname,
-                lname,
+                age,
                 mobile,
                 password: encryptedPassword,
+                gender,
+                hobby,
             });
         }
         else if (ageRange==2){
             const oldUser = await User2.findOne({mobile});
 
             if (oldUser) {
-                // alert('User Exists');
                 return res.send({ error: "User Exists"});
             }
             await User2.create ({
                 ageRange,
-                fname,
-                lname,
                 mobile,
                 password: encryptedPassword,
             });
@@ -63,13 +60,10 @@ app.post("/register", async (req,res) => {
             const oldUser = await User3.findOne({mobile});
 
             if (oldUser) {
-                // alert('User Exists');
                 return res.send({ error: "User Exists"});
             }
             await User3.create ({
                 ageRange,
-                fname,
-                lname,
                 mobile,
                 password: encryptedPassword,
             });
@@ -78,13 +72,10 @@ app.post("/register", async (req,res) => {
             const oldUser = await User4.findOne({mobile});
 
             if (oldUser) {
-                // alert('User Exists');
                 return res.send({ error: "User Exists"});
             }
             await User4.create ({
                 ageRange,
-                fname,
-                lname,
                 mobile,
                 password: encryptedPassword,
             });

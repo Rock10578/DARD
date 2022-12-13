@@ -82,6 +82,18 @@ body, html, .App, #root, .auth-wrapper {
   border: rgba(34, 35, 58, 0.2);
 }
 
+.optionBox input{
+  display: none;
+}
+.optionImg{
+  border: 4px solid transparent;
+  cursor: pointer;
+}
+.optionBox input:checked + .optionImg{
+  border: 4px solid #0d6efd;
+}
+
+
 @media screen and (max-width: 560px){
   #BOX{
     width: 300px;

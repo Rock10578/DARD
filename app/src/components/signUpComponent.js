@@ -8,12 +8,12 @@ export default class SignUp extends Component {
   constructor(props){
     super (props);
     this.state={
-      fname: "",
-      lname: "",
-      mobile: "",
-      password: "",
       ageRange: "",
       age: "",
+      mobile: "",
+      password: "",
+      gender: "",
+      hobby: "",
       child: false,
       young: false,
       adult: false,
@@ -33,9 +33,12 @@ export default class SignUp extends Component {
 
   handleSubmit(e){
     e.preventDefault();
-    if(this.state.verified) {
-      const { ageRange, fname, lname, mobile, password } = this.state;
-      fetch("http://localhost:4000/register", {
+    console.log("Entered Submit function")
+    // eslint-disable-next-line 
+    if (this.state.ageRange == 1){
+      if (this.state.verified){
+        const {ageRange, age, mobile, password, gender, hobby} = this.state;
+        fetch("http://localhost:4000/register", {
           method: "POST",
           crossDomain: true,
           headers: {
@@ -45,23 +48,56 @@ export default class SignUp extends Component {
           },
           body: JSON.stringify({
             ageRange,
-            fname,
-            lname,
+            age,
             mobile,
             password,
+            gender,
+            hobby,
           }),
         }).then((res) => res.json())
         .then((data) => {
           console.log(data, "userRegister");
-          if(data.status==="ok"){ 
+          if (data.status==="ok"){
             alert("Account Created");
             window.localStorage.setItem("token", data.data);
             window.location.href = "./sign-in";
           }else{
             alert("User Already Exists");
           }
-        });
-    } else {
+        })
+      }
+    }
+    // if(this.state.verified) {
+    //   const { ageRange,age, mobile, password, gender, hobby } = this.state;
+    //   fetch("http://localhost:4000/register", {
+    //       method: "POST",
+    //       crossDomain: true,
+    //       headers: {
+    //         "Content-Type": "application/json",
+    //         Accept: "application/json",
+    //         "Access-Control-Allow-Origin": "*",
+    //       },
+    //       body: JSON.stringify({
+    //         ageRange,
+    //         age,
+    //         mobile,
+    //         password,
+    //         gender, 
+    //         hobby,
+    //       }),
+    //     }).then((res) => res.json())
+    //     .then((data) => {
+    //       console.log(data, "userRegister");
+    //       if(data.status==="ok"){ 
+    //         alert("Account Created");
+    //         window.localStorage.setItem("token", data.data);
+    //         window.location.href = "./sign-in";
+    //       }else{
+    //         alert("User Already Exists");
+    //       }
+    //     });
+    // }
+     else {
       alert("Please Verify Mobile");
     }
   }
@@ -197,172 +233,185 @@ export default class SignUp extends Component {
         </div> 
         <hr/>
 
-        <div className="p-5" 
-          style={{ backgroundImage: "url(https://chronicle.brightspotcdn.com/dims4/default/727ef27/2147483647/strip/true/crop/5194x3463+0+308/resize/840x560!/quality/90/?url=http%3A%2F%2Fchronicle-brightspot.s3.amazonaws.com%2Fc6%2F9d%2Fb4c22f114c41a5ef472fdbcbe695%2Fmiller-march17-gettyimages-1166469673.jpg)",}}
-          >
-          <div className="auth-wrapper">
-            <div className="auth-inner" id="BOX">
-              {/* <form onSubmit={this.handleSubmit}> */}
-              <form>
-              {/* <h3>Sign Up</h3> */}
-              <div id="recaptcha-container"></div>
-
-              {/* <div className="mb-3">
-                <label>First name</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="First name"
-                  onChange={(e)=>this.setState({fname: e.target.value})}
-                />
-              </div> */}
-
-              {/* <div className="mb-3">
-                <label>Last name</label>
-                <input 
-                  type="text" 
-                  className="form-control" 
-                  placeholder="Last name" 
-                  onChange={(e)=>this.setState({lname: e.target.value})}/>
-              </div> */}
-
-              <div className="mb-3">
-                <label>Mobile</label>
-                <input
-                  type="number"
-                  className="form-control"
-                  placeholder="Enter Mobile Number"
-                  onChange={(e)=>this.changeMobile(e)}
-                />
-                {this.state.verifyButton ?
-                <input 
-                  type="button"
-                  value={this.state.verified ? "Verified" : "Verify"}
-                  onClick={this.onSignInSubmit}
-                  style={{
-                    backgroundColor:"#0163d2",
-                    width:"100%",
-                    padding:"8",
-                    color:"white", 
-                    border:"none",
-                    borderRadius: "50% 0%",
-                    }}
-                  /> 
-                  : null}
-              </div>
-
-              {this.state.verifyOtp?
-              <div className="mb-3">
-                <label>OTP</label>
-                <input
-                  type="number" min="000000" max="999999"
-                  className="form-control"
-                  placeholder="Enter OTP"
-                  onChange={(e)=>this.setState({otp: e.target.value})}
-                />
-                
-                <input 
-                  type="button"
-                  value="verify"
-                  onClick={this.verifyCode}
-                  style={{
-                    backgroundColor:"#0163d2",
-                    width:"100%",
-                    padding:"8",
-                    color:"white", 
-                    border:"none",
-                    borderRadius: "50% 0%",
-                    }}
-                  />
-              </div>:null}
-
-              <div className="mb-3">
-                <label>Password</label>
-                <input
-                  type="password"
-                  className="form-control"
-                  placeholder="Enter your Password"
-                  onChange={(e)=>this.setState({password: e.target.value})}
-                />
-              </div>
-
-              <div className="d-grid">
-                <button type="submit" className="btn btn-primary">
-                  Sign Up
-                </button>
-              </div>
-
-              <p className="forgot-password text-right">
-                Already registered <a href="/sign-in">sign in?</a>
-              </p>
-              </form>
-            </div>
-          </div>
-        </div>
-        <hr/>
-
         {/* Child Component*/}
         {this.state.child ? <div>
+
+          {/* Mobile Number Verification */}
+          <div className="p-5" 
+            style={{ backgroundImage: "url(https://chronicle.brightspotcdn.com/dims4/default/727ef27/2147483647/strip/true/crop/5194x3463+0+308/resize/840x560!/quality/90/?url=http%3A%2F%2Fchronicle-brightspot.s3.amazonaws.com%2Fc6%2F9d%2Fb4c22f114c41a5ef472fdbcbe695%2Fmiller-march17-gettyimages-1166469673.jpg)",}}>
+            <div className="auth-wrapper">
+              <div className="auth-inner" id="BOX">
+                <form>
+                <div id="recaptcha-container"></div>
+                <div className="mb-3">
+                  <label>Mobile</label>
+                  <input
+                    type="number"
+                    className="form-control"
+                    placeholder="Enter Mobile Number"
+                    onChange={(e)=>this.changeMobile(e)}
+                  />
+                  {this.state.verifyButton ?
+                  <input 
+                    type="button"
+                    value={this.state.verified ? "Verified" : "Verify"}
+                    onClick={this.onSignInSubmit}
+                    style={{
+                      backgroundColor:"#0163d2",
+                      width:"100%",
+                      padding:"8",
+                      color:"white", 
+                      border:"none",
+                      borderRadius: "50% 0%",
+                      }}
+                    /> 
+                    : null}
+                </div>
+
+                {this.state.verifyOtp?
+                <div className="mb-3">
+                  <label>OTP</label>
+                  <input
+                    type="number" min="000000" max="999999"
+                    className="form-control"
+                    placeholder="Enter OTP"
+                    onChange={(e)=>this.setState({otp: e.target.value})}
+                  />
+                  
+                  <input 
+                    type="button"
+                    value="verify"
+                    onClick={this.verifyCode}
+                    style={{
+                      backgroundColor:"#0163d2",
+                      width:"100%",
+                      padding:"8",
+                      color:"white", 
+                      border:"none",
+                      borderRadius: "50% 0%",
+                      }}
+                    />
+                </div>:null}
+
+                <div className="mb-3">
+                  <label>Password</label>
+                  <input
+                    type="password"
+                    className="form-control"
+                    placeholder="Enter your Password"
+                    onChange={(e)=>this.setState({password: e.target.value})}
+                  />
+                </div>
+
+                {/* <div className="d-grid">
+                  <button type="submit" className="btn btn-primary">
+                    Sign Up
+                  </button>
+                </div> */}
+
+                <p className="forgot-password text-right">
+                  Already registered <a href="/sign-in">sign in?</a>
+                </p>
+                </form>
+              </div>
+            </div>
+          </div>
+          <hr/>
           
-        {/* GENDER */}
-        <div className="container text-center">
-          <div className="row g-2">
-            <div className="col-6">
-              <div className="p-3 border bg-light"><h2>Boy</h2></div>
-            </div>
-            <div className="col-6">
-              <div className="p-3 border bg-light"><h2>Girl</h2></div>
-            </div>
-            <div className="col-6">
-              <div className="p-3 border bg-light"><img id="signUpImages" src="https://img.freepik.com/premium-vector/cartoon-boy-holding-human-paper-cutout_29190-7187.jpg?w=360" class="img-fluid" alt="Boy"/></div>
-            </div>
-            <div className="col-6">
-              <div className="p-3 border bg-light"><img id="signUpImages" src="https://img.freepik.com/free-vector/cute-girl-smiling-white-background_1308-42895.jpg?w=2000" class="img-fluid" alt="Girl"/></div>
-            </div>
-          </div>
-        </div>
-        <hr/>
+          {/* GENDER */}
+          <div className="container text-center">
+            <div className="row g-2">
+              <div className="col-6">
+                <div className="p-3 border bg-light"><h2>Boy</h2></div>
+              </div>
+              <div className="col-6">
+                <div className="p-3 border bg-light"><h2>Girl</h2></div>
+              </div>
 
-        {/* Hobbies */}
-        <div className="container">
-          <h1>Hobbies</h1>
-          <div className="row row-cols-2 row-cols-lg-4 g-4 align-items-center">
-            <div className="col">
-              <div className="card h-100">
-                <img src="https://de-cavern.co.nz/wp-content/uploads/2020/05/depositphotos_11503956-stock-illustration-kid-drawing-with-pencil.jpg" class="card-img-top" alt="..."/>
-                <div className="card-body">
-                  <h4 className="card-title">Drawing</h4>
+              <div className="col-6">
+                <div className="p-3 border bg-light">
+                  <label class="optionBox">
+                    <input type="radio" name="gender" value="Boy" onChange={(e)=>this.setState({gender: e.target.value})}/>
+                    <div class="optionImg">
+                      <img id="signUpImages" src="https://img.freepik.com/premium-vector/cartoon-boy-holding-human-paper-cutout_29190-7187.jpg?w=360" class="img-fluid" alt="Boy"/>
+                    </div>
+                  </label>
                 </div>
               </div>
-            </div>
-            <div className="col">
-              <div className="card h-100">
-                <img src="https://st.depositphotos.com/1967477/2312/v/950/depositphotos_23124766-stock-illustration-children-reading-a-book.jpg" class="card-img-top" alt="..."/>
-                <div className="card-body">
-                  <h4 className="card-title">Reading Book</h4>
-                </div>
-              </div>
-            </div>
-            <div className="col">
-              <div className="card h-100">
-                <img src="https://img.freepik.com/premium-vector/cartoon-little-boy-playing-football_353337-419.jpg" class="card-img-top" alt="..."/>
-                <div className="card-body">
-                  <h4 className="card-title">Playing</h4>
-                </div>
-              </div>
-            </div>
-            <div className="col">
-              <div className="card h-100">
-                <img src="https://img.freepik.com/free-vector/boy-singing-dancing_1308-107244.jpg?w=2000" class="card-img-top" alt="..."/>
-                <div className="card-body">
-                  <h5 className="card-title">Singing & Dancing</h5>
+
+              <div className="col-6">
+                <div className="p-3 border bg-light">
+                  <label class="optionBox">
+                    <input type="radio" name="gender" value="Girl" onChange={(e)=>this.setState({gender: e.target.value})}/>
+                    <div class="optionImg">
+                    <img id="signUpImages" src="https://img.freepik.com/free-vector/cute-girl-smiling-white-background_1308-42895.jpg?w=2000" class="img-fluid" alt="Girl"/>
+                    </div>
+                  </label>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <br/>
+          <hr/>
 
+          {/* Hobbies */}
+          <div className="container">
+            <h1>Hobbies</h1>
+            <div className="row row-cols-2 row-cols-lg-4 g-4 align-items-center">
+              <div className="col">
+                <div className="card h-100">
+                  <label class="optionBox">
+                    <input type="checkbox" name="hobby" value="Drawing" onChange={(e)=>this.setState({hobby: e.target.value})}/>
+                    <div class="optionImg">
+                      <img src="https://de-cavern.co.nz/wp-content/uploads/2020/05/depositphotos_11503956-stock-illustration-kid-drawing-with-pencil.jpg" class="card-img-top" alt="..."/>
+                      <div className="card-body">
+                        <h4 className="card-title">Drawing</h4>
+                      </div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+              <div className="col">
+                <div className="card h-100">
+                  <label class="optionBox">
+                    <input type="checkbox" name="hobby" value="Reading" onChange={(e)=>this.setState({hobby: e.target.value})}/>
+                    <div class="optionImg">
+                      <img src="https://st.depositphotos.com/1967477/2312/v/950/depositphotos_23124766-stock-illustration-children-reading-a-book.jpg" class="card-img-top" alt="..."/>
+                      <div className="card-body">
+                        <h4 className="card-title">Reading Book</h4>
+                      </div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+              <div className="col">
+                <div className="card h-100">
+                  <label class="optionBox">
+                    <input type="checkbox" name="hobby" value="Playing" onChange={(e)=>this.setState({hobby: e.target.value})}/>
+                    <div class="optionImg">
+                      <img src="https://img.freepik.com/premium-vector/cartoon-little-boy-playing-football_353337-419.jpg" class="card-img-top" alt="..."/>
+                      <div className="card-body">
+                        <h4 className="card-title">Playing</h4>
+                      </div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+              <div className="col">
+                <div className="card h-100">
+                <label class="optionBox">
+                    <input type="checkbox" name="hobby" value="SingingAndDancing" onChange={(e)=>this.setState({hobby: e.target.value})}/>
+                    <div class="optionImg">
+                      <img src="https://img.freepik.com/free-vector/boy-singing-dancing_1308-107244.jpg?w=2000" class="card-img-top" alt="..."/>
+                      <div className="card-body">
+                        <h5 className="card-title">Singing & Dancing</h5>
+                      </div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br/>
         </div>:null}
 
         {/* Young Component */}
@@ -518,17 +567,14 @@ export default class SignUp extends Component {
           </div>
         </div>
         <br/>
-
-        
-        <br/><br/>
-
         </div>:null}
-        
 
         {/* Sign Up Button */}
-        <button type="submit" className="btn btn-primary">
-          <h1>Sign Up</h1>
-        </button>
+        <form>
+          <button type="sufbmit" className="btn btn-primary">
+            <h1>Sign Up</h1>
+          </button>
+        </form>
         <br/><br/>
 
       </div>
