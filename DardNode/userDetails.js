@@ -14,11 +14,12 @@ const UserDetailsScehma1=new mongoose.Schema(
 );
 const UserDetailsScehma2=new mongoose.Schema(
     {
-        ageRange: Number,
-        fname: String,
-        lname: String,
+        age: Number,
         mobile: {type: Number, unique: true},
         password: String,
+        education: String,
+        language: String,
+        hobby: String,
     },
     {
         collection: "Age2",

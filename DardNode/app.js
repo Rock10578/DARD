@@ -45,15 +45,19 @@ app.post("/register", async (req,res) => {
             });
         }
         else if (ageRange==2){
+            const {education, language, hobby } = req.body;
             const oldUser = await User2.findOne({mobile});
 
             if (oldUser) {
                 return res.send({ error: "User Exists"});
             }
             await User2.create ({
-                ageRange,
+                age,
                 mobile,
                 password: encryptedPassword,
+                education,
+                language,
+                hobby,
             });
         }
         else if(ageRange==3){
