@@ -38,16 +38,17 @@ function App() {
 
         {/* COMPONENTS */}
         <Routes>
-          <Route exact path="/" element={
+          <Route path="/" element={<SignUp/>}></Route>
+          {/* <Route exact path="/" element={
           <div>
             <br/>
             <h1>WELCOME TO "DETAILED ANALYSIS OF REFUGEES AND DEVELOPMENT" PLATFORM</h1>
             <Courses/>
-          </div>} />
+          </div>} /> */}
           <Route path="/sign-in" element={<SignIn />} />
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/userDetails" element={<UserDetails />}/>
-          <Route path="/courseAvailable" element={<Courses/>}/>
+          <Route path="/courseAvailable" element={<Courses />}/>
         </Routes>
       </div>
     </Router>

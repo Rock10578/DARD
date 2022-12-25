@@ -17,6 +17,7 @@ mongoose.connect(mongoUrl,{
 }).catch((e)=>console.log(e));
 
 require("./userDetails");
+const User=mongoose.model("UserDetail");
 const User1=mongoose.model("Age1");
 const User2=mongoose.model("Age2");
 const User3=mongoose.model("Age3");
@@ -27,15 +28,26 @@ app.post("/register", async (req,res) => {
     const {ageRange, age, mobile, password  } = req.body;
     
     const encryptedPassword = await bcrypt.hash(password, 10);
+
+    const oldUser = await User.findOne({mobile});
+    if (oldUser) {
+        return res.send({ error : "User Exists" });
+    }
+
+    await User.create({
+        mobile,
+        password: encryptedPassword,
+        ageRange,
+    })
     
     try{
         if (ageRange==1){
             const {gender, hobby } = req.body;
-            const oldUser = await User1.findOne({mobile});
+            // const oldUser = await User1.findOne({mobile});
 
-            if (oldUser) {
-                return res.send({ error: "User Exists"});
-            }
+            // if (oldUser) {
+            //     return res.send({ error: "User Exists"});
+            // }
             await User1.create ({
                 age,
                 mobile,
@@ -46,11 +58,11 @@ app.post("/register", async (req,res) => {
         }
         else if (ageRange==2){
             const {education, language, hobby } = req.body;
-            const oldUser = await User2.findOne({mobile});
+            // const oldUser = await User2.findOne({mobile});
 
-            if (oldUser) {
-                return res.send({ error: "User Exists"});
-            }
+            // if (oldUser) {
+            //     return res.send({ error: "User Exists"});
+            // }
             await User2.create ({
                 age,
                 mobile,
@@ -61,11 +73,11 @@ app.post("/register", async (req,res) => {
             });
         }
         else if(ageRange==3){
-            const oldUser = await User3.findOne({mobile});
+            // const oldUser = await User3.findOne({mobile});
 
-            if (oldUser) {
-                return res.send({ error: "User Exists"});
-            }
+            // if (oldUser) {
+            //     return res.send({ error: "User Exists"});
+            // }
             await User3.create ({
                 ageRange,
                 mobile,
@@ -73,11 +85,11 @@ app.post("/register", async (req,res) => {
             });
         }
         else if (ageRange==4){
-            const oldUser = await User4.findOne({mobile});
+            // const oldUser = await User4.findOne({mobile});
 
-            if (oldUser) {
-                return res.send({ error: "User Exists"});
-            }
+            // if (oldUser) {
+            //     return res.send({ error: "User Exists"});
+            // }
             await User4.create ({
                 ageRange,
                 mobile,
@@ -99,6 +111,21 @@ app.post("/login-user", async (req, res) => {
     }
     if (await bcrypt.compare(password, user.password)) {
         const token = jwt.sign({mobile: user.mobile}, JWT_SECRET);
+
+        // app.get('/login-user', (req,res) => {
+        //     User.findOne()
+        //     .then(result=>{
+        //         res.status(200).json({
+        //             UserData: result
+        //         });
+        //     })
+        //     .catch(err=>{
+        //         console.log(err);
+        //         res.status(500).json({
+        //             error : err
+        //         })
+        //     })
+        // })
 
         if (res.status(201)) {
             return res.json({ status: "ok", data: token });

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Courses from './courseAvailable';
 
 export default class UserDetails extends Component {
     constructor(props) {
@@ -29,9 +30,9 @@ export default class UserDetails extends Component {
         return (
             <div>
                 <hr/>
-                Name<h1>{this.state.userData.fname} {this.state.userData.lname}</h1>
                 Phone No.<h1>{this.state.userData.mobile}</h1>
                 <hr/>
+                <Courses/>
             </div>
         );
     }

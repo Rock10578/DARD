@@ -478,7 +478,7 @@ export default class SignUp extends Component {
                   <label class="optionBox">
                     <input type="checkbox" name="language" value="Dutch" onChange={(e)=>this.setState({language: e.target.value})}/>
                     <div class="optionImg">
-                    <img src="https://img.freepik.com/premium-vector/dutch-text-effect-editable-eps-file_489510-588.jpg?w=2000" class="card-img-top" alt="..."/>
+                    <img src="https://logos.flamingtext.com/City-Logos/Logo-Design-Dutch.png" class="card-img-top" alt="..."/>
                       <div className="card-body">
                         <h4 className="card-title">Dutch</h4>
                       </div>
@@ -489,11 +489,11 @@ export default class SignUp extends Component {
               <div className="col">
                 <div className="card h-100">
                   <label class="optionBox">
-                    <input type="checkbox" name="language" value="German" onChange={(e)=>this.setState({language: e.target.value})}/>
+                    <input type="checkbox" name="language" value="French" onChange={(e)=>this.setState({language: e.target.value})}/>
                     <div class="optionImg">
-                    <img src="https://thumbs.dreamstime.com/b/word-german-concept-written-colorful-retro-shapes-colors-illustration-german-concept-retro-colorful-word-art-203613022.jpg" class="card-img-top" alt="..."/>
+                    <img src="https://www.shutterstock.com/image-vector/french-language-colorful-typography-text-260nw-1867150849.jpg" class="card-img-top" alt="..."/>
                       <div className="card-body">
-                        <h4 className="card-title">German</h4>
+                        <h4 className="card-title">French</h4>
                       </div>
                     </div>
                   </label>
@@ -502,9 +502,9 @@ export default class SignUp extends Component {
               <div className="col">
                 <div className="card h-100">
                 <label class="optionBox">
-                    <input type="checkbox" name="language" value="Italy" onChange={(e)=>this.setState({language: e.target.value})}/>
+                    <input type="checkbox" name="language" value="Italian" onChange={(e)=>this.setState({language: e.target.value})}/>
                     <div class="optionImg">
-                    <img src="https://previews.123rf.com/images/daboost/daboost1909/daboost190900110/130909504-italian-flag-text-font-italy-symbol-background.jpg" class="card-img-top" alt="..."/>
+                    <img src="https://thumbs.dreamstime.com/b/italiano-d-colorful-write-italian-language-rendering-word-written-letters-standing-slightly-bent-white-surface-107234848.jpg" class="card-img-top" alt="..."/>
                       <div className="card-body">
                         <h5 className="card-title">Italy</h5>
                       </div>
@@ -581,28 +581,44 @@ export default class SignUp extends Component {
         {/* Adult Component */}
         {this.state.adult ? <div>
 
-        {/* Education */}
-        <div className="container text-center">
-          <div className="row g-2">
-            <div className="col-6">
-              <div className="p-3 border bg-light"><h2>Educated</h2></div>
-            </div>
-            <div className="col-6">
-              <div className="p-3 border bg-light"><h2>UnEducated</h2></div>
-            </div>
-            <div className="col-6">
-              <div className="p-3 border bg-light"><img id="signUpImages" src="https://st4.depositphotos.com/4881653/25636/v/1600/depositphotos_256368958-stock-illustration-student-or-schoolboy-studying-at.jpg" class="img-fluid" alt="Boy"/></div>
-            </div>
-            <div className="col-6">
-              <div className="p-3 border bg-light"><img id="signUpImages" src="https://thumbs.dreamstime.com/z/child-suffering-dyslexia-having-difficulty-reading-book-stressed-little-boy-doing-hard-homework-desk-disorder-223355452.jpg" class="img-fluid" alt="Girl"/></div>
+          {/* Education */}
+          <div className="container text-center">
+            <div className="row g-2">
+              <div className="col-6">
+                <div className="p-3 border bg-light"><h2>Educated</h2></div>
+              </div>
+              <div className="col-6">
+                <div className="p-3 border bg-light"><h2>UnEducated</h2></div>
+              </div>
+
+              <div className="col-6">
+                <div className="p-3 border bg-light">
+                  <label class="optionBox">
+                    <input type="radio" name="gender" value="Educated" onChange={(e)=>this.setState({education: e.target.value})}/>
+                    <div class="optionImg">
+                    <img id="signUpImages" src="https://st4.depositphotos.com/4881653/25636/v/1600/depositphotos_256368958-stock-illustration-student-or-schoolboy-studying-at.jpg" class="img-fluid" alt="Boy"/>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <div className="col-6">
+                <div className="p-3 border bg-light">
+                  <label class="optionBox">
+                    <input type="radio" name="gender" value="UnEducated" onChange={(e)=>this.setState({education: e.target.value})}/>
+                    <div class="optionImg">
+                      <img id="signUpImages" src="https://thumbs.dreamstime.com/z/child-suffering-dyslexia-having-difficulty-reading-book-stressed-little-boy-doing-hard-homework-desk-disorder-223355452.jpg" class="img-fluid" alt="Girl"/>
+                    </div>
+                  </label>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-        <hr/>
+          <hr/>
 
-        {/* Language */}
-        <AddMore/>
-        <br/>
+          {/* Hobbies */}
+          <AddMore/>
+          <br/>
 
         </div>:null}
 
@@ -633,7 +649,7 @@ export default class SignUp extends Component {
 
         {/* Sign Up Button */}
         <form>
-          <button type="sufbmit" className="btn btn-primary">
+          <button type="submit" className="btn btn-primary">
             <h1>Sign Up</h1>
           </button>
         </form>

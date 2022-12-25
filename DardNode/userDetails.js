@@ -1,5 +1,16 @@
 const mongoose=require("mongoose");
 
+const UserDetails=new mongoose.Schema(
+    {
+        mobile: {type: Number, unique: true},
+        password: String,
+        ageRange: Number,
+    },
+    {
+        collection: "UserDetail",
+    }
+)
+
 const UserDetailsScehma1=new mongoose.Schema(
     {
         age: Number,
@@ -50,6 +61,7 @@ const UserDetailsScehma4=new mongoose.Schema(
     }
 );
 
+mongoose.model("UserDetail", UserDetails);
 mongoose.model("Age1", UserDetailsScehma1);
 mongoose.model("Age2", UserDetailsScehma2);
 mongoose.model("Age3", UserDetailsScehma3);
