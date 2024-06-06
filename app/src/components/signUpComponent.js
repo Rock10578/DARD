@@ -8,7 +8,6 @@ export default class SignUp extends Component {
   constructor(props){
     super (props);
     this.state={
-      ageRange: "",
       age: "",
       mobile: "",
       password: "",
@@ -16,10 +15,10 @@ export default class SignUp extends Component {
       hobby: "",
       education: "",
       language: "",
-      child: false,
+      child: true,
       young: false,
       adult: false,
-      senior: true,
+      senior: false,
       verifyOtp: false,
       verifyButton: false,
       otp: "",
@@ -37,7 +36,7 @@ export default class SignUp extends Component {
     e.preventDefault();
     console.log("Entered Submit function")
     // eslint-disable-next-line
-    if (this.state.ageRange == 1){
+    if (this.state.age>0 && this.state.age<=12){
       if (this.state.verified){
         const {ageRange, age, mobile, password, gender, hobby} = this.state;
         fetch("http://localhost:4000/register", {
@@ -72,7 +71,7 @@ export default class SignUp extends Component {
       }
     }
     // eslint-disable-next-line
-    else if (this.state.ageRange == 2){
+    else if (this.state.age>12 && this.state.age<20){
       if (this.state.verified){
         const {ageRange, age, mobile, password, education, language, hobby} = this.state;
         fetch("http://localhost:4000/register", {
@@ -107,7 +106,7 @@ export default class SignUp extends Component {
         alert("Please Verify Mobile");
       }
     }
-     else {
+    else {
       alert("Something Went Wrong");
     }
   }
@@ -169,27 +168,28 @@ export default class SignUp extends Component {
   }
 
   checkAge(e){
-    this.setState({ageRange: e.target.value}, function(){
+    // this.setState({ageRange: e.target.value}, function(){
+    this.setState({age: e.target.value}, function(){
       // eslint-disable-next-line
-      if(this.state.ageRange == 1){
+      if(this.state.age <= 12){
         this.setState({ child: true, });
         this.setState({ young: false, });
         this.setState({ adult: false, });
         this.setState({ senior: false,});
       }// eslint-disable-next-line 
-      else if(this.state.ageRange == 2){
+      else if(this.state.age > 12 && this.state.age < 20){
         this.setState({ child: false, });
         this.setState({ young: true, });
         this.setState({ adult: false, });
         this.setState({ senior: false,});
       }// eslint-disable-next-line 
-      else if (this.state.ageRange == 3){
+      else if (this.state.age >= 20 && this.state.age <= 45){
         this.setState({ child: false, });
         this.setState({ young: false, });
         this.setState({ adult: true, });
         this.setState({ senior: false,});
       }// eslint-disable-next-line 
-      else if (this.state.ageRange == 4){
+      else if (this.state.age > 45){
         this.setState({ child: false, });
         this.setState({ young: false, });
         this.setState({ adult: false, });
@@ -200,11 +200,13 @@ export default class SignUp extends Component {
 
   render() {
     return (
-      <div onSubmit={this.handleSubmit}>
+      <div className="mt-3 mb-1" onSubmit={this.handleSubmit}>
+
+        <h2>Detailed Analysis of Dearth</h2>
         <br/>
         {/* AGE */}
         <div className="container">
-          <h1>Drag Your Age Group</h1>
+          {/* <h1>Drag Your Age Group</h1>
           <div className="container m-1 ps-5 pe-5">
             <input 
               type="range" 
@@ -214,14 +216,14 @@ export default class SignUp extends Component {
               max="4"
               onChange={(e)=>this.checkAge(e)}
             />
-          </div>
-          <div className="row align-items-start">
+          </div> */}
+          {/* <div className="row align-items-start">
             <div className="col">(0-12)</div>
             <div className="col">(13-19)</div>
             <div className="col">(20-45)</div>
             <div className="col">(45+)</div>
           </div>
-          <br/><br/>
+          <br/><br/> */}
 
           <div className="card mb-3" >
             <div className="row g-0 align-items-center">
@@ -234,7 +236,8 @@ export default class SignUp extends Component {
                   <input 
                       type="number" 
                       placeholder="Enter your age"
-                      onChange={(e)=>this.setState({age: e.target.value})}
+                      // onChange={(e)=>this.setState({age: e.target.value})}
+                      onChange={(e)=>this.checkAge(e)}
                   />
                 </div>
               </div>
@@ -634,17 +637,31 @@ export default class SignUp extends Component {
             <div className="col-6">
               <div className="p-3 border bg-light"><h2>UnEducated</h2></div>
             </div>
-            
 
             <div className="col-6">
-              <div className="p-3 border bg-light"><img id="signUpImages" src="https://st4.depositphotos.com/4881653/25636/v/1600/depositphotos_256368958-stock-illustration-student-or-schoolboy-studying-at.jpg" class="img-fluid" alt="Boy"/></div>
+              <div className="p-3 border bg-light">
+                <label class="optionBox">
+                  <input type="radio" name="gender" value="Educated" onChange={(e)=>this.setState({education: e.target.value})}/>
+                  <div class="optionImg">
+                  <img id="signUpImages" src="https://st4.depositphotos.com/4881653/25636/v/1600/depositphotos_256368958-stock-illustration-student-or-schoolboy-studying-at.jpg" class="img-fluid" alt="Boy"/>
+                  </div>
+                </label>
+              </div>
             </div>
+
             <div className="col-6">
-              <div className="p-3 border bg-light"><img id="signUpImages" src="https://thumbs.dreamstime.com/z/child-suffering-dyslexia-having-difficulty-reading-book-stressed-little-boy-doing-hard-homework-desk-disorder-223355452.jpg" class="img-fluid" alt="Girl"/></div>
+              <div className="p-3 border bg-light">
+                <label class="optionBox">
+                  <input type="radio" name="gender" value="UnEducated" onChange={(e)=>this.setState({education: e.target.value})}/>
+                  <div class="optionImg">
+                    <img id="signUpImages" src="https://thumbs.dreamstime.com/z/child-suffering-dyslexia-having-difficulty-reading-book-stressed-little-boy-doing-hard-homework-desk-disorder-223355452.jpg" class="img-fluid" alt="Girl"/>
+                  </div>
+                </label>
+              </div>
             </div>
           </div>
         </div>
-        <br/>
+        <hr/>
         </div>:null}
 
         {/* Sign Up Button */}

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Courses from './courseAvailable';
+import Courses from './courses'
 
 export default class UserDetails extends Component {
     constructor(props) {

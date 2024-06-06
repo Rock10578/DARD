@@ -31,20 +31,20 @@ export default class Login extends Component {
       console.log(data, "userRegister");
       if(data.status==="ok"){ 
         window.localStorage.setItem("token", data.data);
-        window.location.href = "./userDetails";
+        window.location.href = "./courses";
       }
     });
   }
 
   render() {
     return (
-      <div className="p-5" 
-           style={{ 
+      <div className="p-5" id="bg-login"
+           style={{
               backgroundImage: "url(https://chronicle.brightspotcdn.com/dims4/default/727ef27/2147483647/strip/true/crop/5194x3463+0+308/resize/840x560!/quality/90/?url=http%3A%2F%2Fchronicle-brightspot.s3.amazonaws.com%2Fc6%2F9d%2Fb4c22f114c41a5ef472fdbcbe695%2Fmiller-march17-gettyimages-1166469673.jpg)",
               height: "90%"
               }}>
         <div className="auth-wrapper">
-          <div className="auth-inner">
+          <div className="auth-inner" id="BOX">
             <form onSubmit={this.handleSubmit}>
             <h3>Sign In</h3>
 
@@ -94,8 +94,6 @@ export default class Login extends Component {
           </div>    
         </div>
       </div>
-      
-      
     )
   }
 }

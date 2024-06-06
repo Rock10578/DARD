@@ -1,0 +1,212 @@
+[
+    {
+        "id": "1",
+        "image": "https://yt3.googleusercontent.com/ytc/AMLnZu9eJMZXrwTK_XCXNEKUAL1c_MWk7OoBXAMKehtgpg=s900-c-k-c0x00ffffff-no-rj",
+        "title": "Peek a Boo",
+        "desc": "Peekaboo is a classic game played with babies, where one person hides their face or objects behind their hands and suddenly reveals them, saying \"peekaboo!\" It's a simple yet delightful way to engage infants, promoting cognitive development and fostering a sense of object permanence.",
+        "url": "https://www.youtube.com/watch?v=qLrlrhFzHAk"
+    },
+    {
+        "id": "2",
+        "image": "https://media.istockphoto.com/id/502967204/vector/alphabet-a-to-z-1.jpg?s=612x612&w=0&k=20&c=H38fNIFLvLHQykEa65f4DRmemm3Yu73Wd77b8pmaGWI=",
+        "title": "English Explorers Program",
+        "desc": "Embark on an exciting journey with the English Explorers Program! This course focuses on building strong reading, writing, and communication skills through captivating stories, creative writing exercises, and interactive grammar games.",
+        "url": "https://www.youtube.com/watch?v=hq3yfQnllfQ"
+    },
+    {
+        "id": "3",
+        "image": "https://bsebresult.in/wp-content/uploads/2021/05/hindi-vowels-Vowels-In-Hindi.jpg",
+        "title": "Hindi Heritage Hub",
+        "desc": "Discover the beauty of the Hindi language and culture in the Hindi Heritage Hub! This course offers a comprehensive approach to learning Hindi, combining reading, writing, speaking, and listening exercises.",
+        "url": "https://www.youtube.com/watch?v=Yvb3we9HMFo"
+    },
+    {
+        "id": "4",
+        "image": "https://i.ytimg.com/vi/mjlsSYLLOSE/maxresdefault.jpg",
+        "title": "Math Magicians Workshop",
+        "desc": "Transform into a Math Magician with this engaging and interactive course! Designed to make math fun and approachable, kids will tackle puzzles, games, and hands-on activities that strengthen their arithmetic, geometry, and problem-solving skills. ",
+        "url": "https://www.youtube.com/watch?v=v9FFCXdLONc"
+    },
+    {
+        "id": "5",
+        "image": "https://d20x1nptavktw0.cloudfront.net/wordpress_media/2022/03/Blog-Image-9.jpg",
+        "title": "Biology For Class 10",
+        "desc": " This course is structured to enhance the understanding of life processes, biological diversity, and the intricate systems that sustain life on Earth. It covers a broad range of topics, making it an essential stepping stone for students who wish to pursue higher studies in the field of biological sciences.",
+        "url": "https://www.youtube.com/watch?v=OXEN7ccYD9c"
+    },
+    {
+        "id": "6",
+        "image": "https://m.media-amazon.com/images/I/91Pv0s7UtEL.jpg",
+        "title": "Python",
+        "desc": "The Python course offers a comprehensive introduction to programming with Python. Designed for beginners, it covers basic syntax, data structures, functions, and libraries. Through hands-on projects and real-world examples, students will gain practical skills in coding, problem-solving, and software development, preparing them for advanced programming challenges.",
+        "url": "https://www.youtube.com/watch?v=8UW7IdUBLds&list=PLyhfXGRX10EtSYaW5AvA2ZWjT1ci9slgi&ab_channel=TejpalMaurya"
+    },
+    {
+        "id": "7",
+        "image": "https://www.madrasshoppe.com/180485-large_default/spanish-for-beginners-usborne-language-guides-nill.jpg",
+        "title": "Spanish for Beginners",
+        "desc": "Learn the basics of the Spanish language, including vocabulary and grammar.",
+        "url": "https://youtu.be/2SIdIAMzHH0?si=TFZmPTPpV2Fgh2Xu"
+    },
+    {
+        "id": "8",
+        "image": "data:image/jpeg;base64,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",
+        "title": "Effective Communication Skills",
+        "desc": "Develop essential communication skills for personal and professional success.",
+        "url": "https://youtu.be/HAnw168huqA?si=Qs7sGCv91G-eacu4"
+    },
+    {
+        "id": "9",
+        "image": "https://img-c.udemycdn.com/course/750x422/1036542_2ba2.jpg",
+        "title": "Introduction to Game Development",
+        "desc": "Learn the basics of game development using Unity and C#.",
+        "url": "https://youtu.be/eANjGomWZp4?si=lmgRJ77tUwoSO-ta"
+    },
+    {
+        "id": "10",
+        "image": "data:image/jpeg;base64,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",
+        "title": "Advanced Mathematics",
+        "desc": "Dive deeper into complex mathematical concepts and problem-solving techniques.",
+        "url": "https://www.google.com/imgres?q=Advanced%20Mathematics&imgurl=https%3A%2F%2Fi.ytimg.com%2Fvi%2F4pT59E-Q2a4%2Fmaxresdefault.jpg&imgrefurl=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D4pT59E-Q2a4&docid=MuCxhrYAf9FLtM&tbnid=MdCVJSLKGQieNM&vet=12ahUKEwjc0Z-tmsaGAxXyzjgGHU5mDnQQM3oECFkQAA..i&w=1280&h=720&hcb=2&ved=2ahUKEwjc0Z-tmsaGAxXyzjgGHU5mDnQQM3oECFkQAA"
+    },
+    {
+        "id": "11",
+        "image": "https://ae85df921b92073b52e8-a126a45a4c59e90797d94cd877fbe744.ssl.cf3.rackcdn.com/books/cover/uc-5892c4816e48c.jpg",
+        "title": "Physics Fundamentals",
+        "desc": "Explore the fundamental principles of physics, including mechanics and thermodynamics.",
+        "url": "https://youtu.be/wUgYa5YLBbM?si=4AY1wsUX05VzCrwr"
+    },
+    {
+        "id": "12",
+        "image": "https://m.media-amazon.com/images/I/71+tGC6LkSL._AC_UF1000,1000_QL80_.jpg",
+        "title": "Principles of Economics",
+        "desc": "Understand basic economic principles, including supply and demand, and market structures.",
+        "url": "https://youtu.be/34NxTdRtQrM?si=0AqXsx_QkqOetFjv"
+    },
+    {
+        "id": "13",
+        "image": "https://m.media-amazon.com/images/I/51Si-lkTlnL._AC_UF1000,1000_QL80_.jpg",
+        "title": "World Geography",
+        "desc": "Learn about the physical and political geography of the world.",
+        "url": "https://youtu.be/hNVD8fyIsEI?si=8Qp3nyrmV7aGPUH7"
+    },
+    {
+        "id": "14",
+        "image": "https://media.geeksforgeeks.org/wp-content/cdn-uploads/20230305131111/Java-programming.png",
+        "title": "Java Programming Basics",
+        "desc": "Get started with Java programming, covering syntax, control structures, and basic OOP.",
+        "url": "https://youtu.be/mAtkPQO1FcA?si=UPy4jGmd4DvKRuxB"
+    },
+    {
+        "id": "15",
+        "image": "https://nursingwithlight.com/wp-content/uploads/2024/03/proud-nurse.webp",
+        "title": "Introduction to Nursing",
+        "desc": "Learn the basics of nursing, including patient care and medical ethics.",
+        "url": "https://youtu.be/KgYlL-xJEB4?si=nfC8z6m4Xh0X2GCv"
+    },
+    {
+        "id": "16",
+        "image": "https://media.licdn.com/dms/image/D4E12AQHPfeaf61ARlw/article-cover_image-shrink_720_1280/0/1707956393334?e=2147483647&v=beta&t=GYpFx7NlLhBWpF2Ow0tzdwoqWrF78PvPmI-wVFuO3B8",
+        "title": "Full Stack Web Development",
+        "desc": "Become a full stack developer by learning both front-end and back-end technologies.",
+        "url": "https://youtu.be/MkcfB7S4fq0?si=Ew9Skv8482cuIXR2"
+    },
+    {
+        "id": "17",
+        "image": "https://media.licdn.com/dms/image/C5112AQEh1Tu0ocOHtA/article-cover_image-shrink_720_1280/0/1520129665709?e=2147483647&v=beta&t=pTi-qZ5AGunXTL7zmo37MomxYQo-Ahyxdn36FSek7F4",
+        "title": "Teaching English as a Second Language",
+        "desc": "Prepare to teach English to non-native speakers with effective strategies and methodologies.",
+        "url": "https://youtu.be/bAe9nA0aW4s?si=d7hwhuaeqnqxdzFN"
+    },
+    {
+        "id": "18",
+        "image": "https://i.ytimg.com/vi/K2AeFDiOLI8/maxresdefault.jpg",
+        "title": "IELTS Preparation",
+        "desc": "Get ready for the IELTS exam with comprehensive preparation strategies and practice tests.",
+        "url": "https://youtu.be/3gvJ_0qi_Tc?si=4BG0-_iVTFEgFS0i"
+    },
+    {
+        "id": "19",
+        "image": "https://cdn.kobo.com/book-images/a698cf62-dfec-4e42-aa64-fa4620448475/1200/1200/False/french-learn-french-for-beginners-learn-french-with-stories-for-beginners-vol-1.jpg",
+        "title": "French for Beginners",
+        "desc": "Learn the basics of French, including essential vocabulary and conversational phrases.",
+        "url": "https://youtu.be/wtiFx1TRCq0?si=URcOVls-pBRK92r4"
+    },
+    {
+        "id": "20",
+        "image": "https://media.licdn.com/dms/image/D4D12AQEbpdI9jtWbgA/article-cover_image-shrink_720_1280/0/1688311808273?e=2147483647&v=beta&t=y9GqEdX22oMZugF5yDRgtRqCDx3WCW3-FX0Jz4rHQqc",
+        "title": "Public Speaking Skills",
+        "desc": "Develop confidence and skills in public speaking for various audiences and settings.",
+        "url": "https://youtu.be/savwVzZh5go?si=Ilm1JKCQAcm9TvRQ"
+    },
+    {
+        "id": "21",
+        "image": "https://i.ytimg.com/vi/pF2LGYVRCwI/sddefault.jpg",
+        "title": "Game Design Principles",
+        "desc": "Understand the principles of game design, including storytelling, mechanics, and user experience.",
+        "url": "https://youtu.be/iIOIT3dCy5w?si=1HAStusgy3lkPX3r"
+    },
+    {
+        "id": "22",
+        "image": "https://m.media-amazon.com/images/I/61tXVaS4T0L._AC_UF1000,1000_QL80_.jpg",
+        "title": "Calculus I",
+        "desc": "Learn the fundamentals of calculus, including limits, derivatives, and integrals.",
+        "url": "https://youtu.be/WsQQvHm4lSw?si=LaGhSU7KpGV_YJHn"
+    },
+    {
+        "id": "23",
+        "image": "https://caltechsites-prod.s3.amazonaws.com/scienceexchange/images/Quantum_Physics-HeaderImage-F.2e16d0ba.fill-933x525-c100.jpg",
+        "title": "Quantum Physics",
+        "desc": "Explore the basics of quantum physics, including wave-particle duality and quantum mechanics.",
+        "url": "https://youtu.be/B0BpGL3lTXs?si=gJA5I4Dnbhts2dqR"
+    },
+    {
+        "id": "24",
+        "image": "https://st.adda247.com/https://adda247jobs-wp-assets-prod.adda247.com/articles/wp-content/uploads/2023/04/07144819/macroeconomics-and-microeconomics.jpg",
+        "title": "Microeconomics",
+        "desc": "Study the behavior of individuals and firms in making decisions regarding the allocation of resources.",
+        "url": "https://youtu.be/VXfJwZORMCc?si=VE1Jld14RNzMSKIo"
+    },
+    {
+        "id": "25",
+        "image": "https://s3-ap-south-1.amazonaws.com/ricedigitals3bucket/AUPortalContent/2021/08/04083303/Untitled-design-81.png",
+        "title": "Human Geography",
+        "desc": "Learn about human populations, their cultures, activities, and landscapes.",
+        "url": "https://youtu.be/4y2nndDs8m4?si=nesAtG1IVJPxodZA"
+    },
+    {
+        "id": "26",
+        "image": "https://media.geeksforgeeks.org/wp-content/uploads/20191113114209/CTutorial.png",
+        "title": "C++ Programming Basics",
+        "desc": "Learn the fundamentals of C++ programming, including syntax and basic concepts.",
+        "url": "https://youtu.be/McojvctVsUs?si=bfkSufOcXoQ0SvIU"
+    },
+    {
+        "id": "27",
+        "image": "https://nicoletcollege.pressbooks.pub/app/uploads/sites/47/2022/03/Anatomy_cover.jpg",
+        "title": "Medical Terminology",
+        "desc": "Understand the language of medicine, including terms related to anatomy, procedures, and diseases.",
+        "url": "https://youtu.be/rhy-ELMfZfA?si=95YLeZb-VmgGnO3r"
+    },
+    {
+        "id": "28",
+        "image": "https://www.topsinfosolutions.com/wp-content/uploads/2018/12/2.png",
+        "title": "Frontend Development with React",
+        "desc": "Build modern, responsive web applications using React, a popular JavaScript library.",
+        "url": "https://youtu.be/SqcY0GlETPk?si=MWXhDI8SCx6Oob--"
+    },
+    {
+        "id": "29",
+        "image": "https://images.ctfassets.net/p0qf7j048i0q/29eZ4o64sfjSKaQafj7DEQ/4d32326bbea3badf12aeec01509361ce/G950609434.png?w=3840&q=75&h=3840&fm=webp",
+        "title": "Teaching Mathematics",
+        "desc": "Learn effective strategies for teaching mathematics to students of various ages.",
+        "url": "https://youtu.be/V6yixyiJcos?si=VV3kfdkgbpmP7CjA"
+    },
+    {
+        "id": "30",
+        "image": "https://blogassets.leverageedu.com/blog/wp-content/uploads/2020/04/21185236/TOEFL-Preparation-Tips.jpg",
+        "title": "TOEFL Preparation",
+        "desc": "Prepare for the TOEFL exam with comprehensive strategies and practice tests.",
+        "url": "https://youtu.be/Gvj3VpmwUGw?si=umoPhg4Ojcz8ULNe"
+    }
+]
